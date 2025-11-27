@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja de Confeitaria</title>
+    <title>Doce Encanto - Confeitaria</title>
+
     <style>
+        * {
+            scroll-behavior: smooth; /* Rolagem suave ao clicar no menu */
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -13,7 +17,6 @@
             background-color: #f4f4f4;
         }
 
-        /* Cabeçalho */
         header {
             background-color: #ff87ef;
             color: white;
@@ -21,184 +24,206 @@
             text-align: center;
         }
 
-        header h1 {
-            font-size: 2.5em;
-        }
-
         header img {
-            width: 120px; /* Tamanho do logo */
-            height: auto;
-            border-radius: 50%; /* Faz o logo ficar redondo, caso queira */
-            margin-bottom: 15px;
+            width: 120px;
+            border-radius: 50%;
         }
 
-        /* Menu de navegação */
         nav ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
-            text-align: center;
+            margin-top: 15px;
         }
 
         nav ul li {
             display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            background-color: #f8adff;
-            border-radius: 10px;
+            margin: 0 12px;
+            background: #f8adff;
+            padding: 10px 18px;
+            border-radius: 12px;
         }
 
         nav ul li a {
             text-decoration: none;
-            color: black;
             font-weight: bold;
+            color: rgb(0, 0, 0);
         }
 
-        /* Seção de Logotipos */
-        .logotipos {
+        /* Seções */
+        section {
+            padding: 40px 20px;
             text-align: center;
-            padding: 40px 0;
-            background-color: #ffffff;
         }
 
-        .logotipos h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
+        #home {
+            background: #ffffff;
         }
 
-        .logotipos img {
-            margin: 10px;
-            max-width: 150px;
+        #produtos {
+            background: #f8f8f8;
         }
 
-        /* Seção de Produtos */
-        .produtos {
-            text-align: center;
-            padding: 40px 0;
-            background-color: #f8f8f8;
+        #sobre {
+            background: #ffffff;
         }
 
-        .produtos h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
+        #contato {
+            background: #f0c9ff;
         }
 
-        .produtos .produto {
+        /* Produtos */
+        .produto {
             display: inline-block;
+            background: #fff;
             margin: 20px;
             padding: 20px;
-            background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 200px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
-        .produtos img {
-            max-width: 100%;
+        .produto img {
+            width: 100%;
             border-radius: 10px;
         }
 
-        .produtos .descricao {
-            margin: 10px 0;
-        }
-
-        .produtos button {
-            background-color: #f712f7;
+        .produto button {
+            background: #f712f7;
             color: white;
             border: none;
             padding: 10px;
-            border-radius: 5px;
+            margin-top: 10px;
+            border-radius: 8px;
             cursor: pointer;
         }
 
-        .produtos button:hover {
-            background-color: #ee08a9;
+        .produto button:hover {
+            background: #d900d9;
         }
 
-        /* Seção de Pacotes */
-        .pacotes {
-            background-color: #ff8fec;
-            text-align: center;
-            padding: 30px 0;
+        /* Formulário */
+        form {
+            max-width: 400px;
+            margin: auto;
+            text-align: left;
         }
 
-        .pacotes a {
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 6px;
+        }
+
+        form button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            margin-top: 10px;
+            background: #ff00d9;
             color: white;
-            background-color: #ff3dff;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-size: 1.2em;
-            border-radius: 5px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            cursor: pointer;
         }
 
-        /* Rodapé */
-        .footer {
+        form button:hover {
+            background: #d600b7;
+        }
+
+        footer {
             background-color: #ff72ff;
             color: white;
             text-align: center;
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            padding: 15px;
+            margin-top: 50px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Cabeçalho -->
-    <header>
-        <img src="imagens/logo.png" alt="Logo Da Loja Doce Encanto"> <!-- Imagem do logo -->
-        <h1>Doce Encanto - Confeitaria</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#produtos">Produtos</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <img src="imagens/logo.png" alt="Logo Da Loja Doce Encanto">
+    <h1>Doce Encanto - Confeitaria</h1>
 
-    <!-- Seção de Logotipos -->
-    <section class="logotipos">
-        <h2>Bem vindo a Doce Encanto</h2>
-        <div>
-            <img src="imagens/sweetbox_logo.jpg" alt= "Logo Sweetbox">
-        </div>
-    </section>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <!-- Seção de Produtos -->
-    <section class="produtos" id="produtos">
-        <h2>Nossos Produtos</h2>
-        <div class="produto">
-            <img src="imagens/bolinho_chocolate.jpg" alt="Bolinho de Chocolate">
-            <div class="descricao">Bolinho de Chocolate</div>
-            <div>R$ 10,90</div>
-            <button>Adicionar ao Carrinho</button>
-        </div>
-        <div class="produto">
-            <img src="imagens/macaron.jpg" alt="Macaron">
-            <div class="descricao">Macaron</div>
-            <div>R$ 5,50</div>
-            <button>Adicionar ao Carrinho</button>
-        </div>
-        <div class="produto">
-            <img src="imagens/donuts.jpg" alt="Donuts">
-            <div class="descricao">Donuts</div>
-            <div>R$ 7,80</div>
-            <button>Adicionar ao Carrinho</button>
-        </div>
-    </section>
+<!-- HOME -->
+<section id="home">
+    <h2>Bem-vindo à Doce Encanto</h2>
+    <img src="imagens/sweetbox_logo.jpg" width="200">
+    <p>Os doces mais encantadores da cidade!</p>
+</section>
 
-    <!-- Seção de Pacotes -->
-    <section class="pacotes">
-        <h2>Conheça nossos Pacotes para Criar Logotipo</h2>
-        <a href="#">Conheça Agora!</a>
-    </section>
+<!-- PRODUTOS -->
+<section id="produtos">
+    <h2>Nossos Produtos</h2>
 
-    <!-- Rodapé -->
-    <footer class="footer">
-        <p>&copy; 2025 Doce Encanto - Todos os direitos reservados.</p>
-    </footer>
+    <div class="produto">
+        <img src="imagens/bolinho_chocolate.avif" alt="Bolinho de Chocolate">
+        <p>Bolinho de Chocolate</p>
+        <p><strong>R$ 10,90</strong></p>
+        <button>Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="produto">
+        <img src="imagens/macaron.jpg" alt="Macaron">
+        <p>Macaron</p>
+        <p><strong>R$ 5,50</strong></p>
+        <button>Adicionar ao Carrinho</button>
+    </div>
+
+    <div class="produto">
+        <img src="imagens/donuts.jpg" alt="Donuts">
+        <p>Donuts</p>
+        <p><strong>R$ 7,80</strong></p>
+        <button>Adicionar ao Carrinho</button>
+    </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>
+        A **Doce Encanto** é uma confeitaria especializada em doces artesanais,
+        feitos com carinho e ingredientes selecionados.
+    </p>
+    <p>
+        Nosso objetivo é levar alegria e sabor para cada cliente!
+    </p>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+    <h2>Fale Conosco</h2>
+    <p>Preencha o formulário para entrar em contato.</p>
+
+    <form>
+        <label>Seu nome:</label>
+        <input type="text" placeholder="Digite seu nome" required>
+
+        <label>Telefone:</label>
+        <input type="tel" placeholder="(DDD) 9 9999-9999" required>
+
+        <label>Mensagem:</label>
+        <textarea rows="4" placeholder="Escreva sua mensagem" required></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+<footer>
+    &copy; 2025 Doce Encanto - Todos os direitos reservados.
+</footer>
 
 </body>
 </html>
